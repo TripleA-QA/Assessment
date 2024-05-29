@@ -18,6 +18,6 @@
 import './commands'
 
 // Alternatively you can use CommonJS syntax:
-import './parameter-types';
+//import './parameter-types';
 // require('./commands')
 

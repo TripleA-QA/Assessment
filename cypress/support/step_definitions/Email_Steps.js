@@ -1,32 +1,36 @@
 ///<reference types="cypress" />
 
-import  { Given, Then, When }  from "@badeball/cypress-cucumber-preprocessor";
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('I navigate to the url' , () => {
-    cy.visit('/') 
-})
+Given("I navigate to the url", () => {
+  cy.visit("/"); //Visits the base URL  defined  in the cypress.config
+});
 
-When('I scroll down on the page and click on elemental selenium link {linkText}', (linkText)  => {
-    //cy.get('a[href="http://elementalselenium.com/"]')
-    cy.get('a:contains("${LinkText}")')
+When("I scroll down on the page and click on elemental selenium link", () => {
+  cy.get('a[href="http://elementalselenium.com/"]')
+    //cy.get('a:contains("${LinkText}")')
     .scrollIntoView()
-    .invoke("removeAttr", "target")  //to keep the new tab opened in the same page
-    .click({force: true})
-})
+    .should("be.visible") //To ensure link is visible
+    .invoke("removeAttr", "target") //to keep the new tab opened in the same page
+    //.click({ force: true });
+    .click();
+});
 
-When('I Fill in a disposable email "{emailAddress}"', (emailAddress)  => {
-    cy.get('#email').type(emailAddress);
-})
+When("I Fill in a disposable email {string}", (email) => {
+  cy.get("#email")
+    .should("be.visible") //To ensure link is visible
+    .type(email);
+});
 
-When('I Select a language' , () => {
-    cy.get('select').select('JavaScript').should('have.value', 'javascript')
-    cy.get('[type="submit"]').click()
+When("I Select a language {string}", (language) => {
+  cy.get("select").select(language).should("have.value", "javascript");
+  cy.get('[type="submit"]').click();
+});
 
-})
-
-Then('I should see the error message' , () => {
-    cy.get(':nth-child(1) > .error').then(($el) => {
-        expect($el.text().trim()).to.equal('Email is on a high-bounce domain. Please enter another email address.');
-      })
-
-    })
+Then("I should see the message {string}", (errorMessage) => {
+  cy.get(":nth-child(1) > .error")
+    .should("be.visible")
+    .should(($el) => {
+      expect($el.text().trim()).to.equal(errorMessage);
+    });
+});

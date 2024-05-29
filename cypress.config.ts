@@ -8,7 +8,7 @@ export default defineConfig({
   e2e: {
     specPattern: "**/*.feature",
     baseUrl: 'https://the-internet.herokuapp.com',
-    //pageLoadTimeout: 90000,
+    pageLoadTimeout: 150000,
     chromeWebSecurity: false,
     async setupNodeEvents(
       on: Cypress.PluginEvents,
