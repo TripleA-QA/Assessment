@@ -53,10 +53,39 @@ To run Cypress tests in headless mode
 
 This will execute all the tests and output the results in the terminal.
 
+#Project Structure
+
+- __Assessment__
+   - [README.md](README.md)
+   - __cypress__
+     - __downloads__
+     - __e2e__
+       - [Email\_Test.feature](cypress/e2e/Email_Test.feature)
+     - __fixtures__
+       - [example.json](cypress/fixtures/example.json)
+     - __screenshots__
+       - __Email\_Test.feature__
+         - [Disposable\-Email \-\- Disposable Email supplied (example #1) (failed).png](cypress/screenshots/Email_Test.feature/Disposable-Email%20--%20Disposable%20Email%20supplied%20(example%20%231)%20(failed).png)
+         - [Disposable\-Email \-\- Disposable Email supplied (example #2) (failed).png](cypress/screenshots/Email_Test.feature/Disposable-Email%20--%20Disposable%20Email%20supplied%20(example%20%232)%20(failed).png)
+     - __support__
+       - [commands.js](cypress/support/commands.js)
+       - [e2e.js](cypress/support/e2e.js)
+       - __step\_definitions__
+         - [Email\_Steps.js](cypress/support/step_definitions/Email_Steps.js)
+   - [cypress.config.ts](cypress.config.ts)
+   - [node\_modules](node_modules)
+   - [package\-lock.json](package-lock.json)
+   - [package.json](package.json)
+   - [tsconfig.json](tsconfig.json)
+
+
+
 
 Additional Information
 - [Cypress Documentation](https://docs.cypress.io/)
 - [Cypress Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor)
+
+
 
 
 
