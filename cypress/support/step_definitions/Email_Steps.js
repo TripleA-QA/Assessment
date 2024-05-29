@@ -22,7 +22,10 @@ When("I Fill in a disposable email {string}", (email) => {
 });
 
 When("I Select a language {string}", (language) => {
-  cy.get("select").select(language).should("have.value", "javascript");
+  cy.get("select")
+    .should("be.visible")
+    .select(language)
+    .should("have.value", "javascript");
   cy.get('[type="submit"]').click();
 });
 
