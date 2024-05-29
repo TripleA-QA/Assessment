@@ -8,7 +8,6 @@ Given("I navigate to the url", () => {
 
 When("I scroll down on the page and click on elemental selenium link", () => {
   cy.get('a[href="http://elementalselenium.com/"]')
-    //cy.get('a:contains("${LinkText}")')
     .scrollIntoView()
     .should("be.visible") //To ensure link is visible
     .invoke("removeAttr", "target") //to keep the new tab opened in the same page

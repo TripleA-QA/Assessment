@@ -76,9 +76,7 @@ This will execute all the tests and output the results in the terminal.
    - tsconfig.json
 
 
-
-
-Additional Information
+#Additional Information
 - [Cypress Documentation](https://docs.cypress.io/)
 - [Cypress Cucumber Preprocessor](https://github.com/badeball/cypress-cucumber-preprocessor)
 
